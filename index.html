@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pallet Time Calculator</title>
+</head>
+<body>
+    <h1>Pallet Time Calculator</h1>
+    <form onsubmit="return calculate(event)">
+        <label for="start-time">Pallet start time: </label>
+        <input id="start-time" type="time" name="start-time" required>
+        <label for="finish-time">Pallet finish time: </label>
+        <input id="finish-time" type="time" name="finish-time" required>
+        <h2>Breaks</h2>
+        <label for="break-minutes">Time spent on break: </label>
+        <input id="break-minutes" type="number" name="break-minutes" value="0" required> minutes
+        <br>
+        <button type="submit">Calculate</button>
+    </form>
+    <script src="js/main.js"></script>
+</body>
+</html>
