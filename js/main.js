@@ -3,19 +3,32 @@ var interruptions = [];
 // Value used to generate ID for interruptions
 var interruptionIncrement = 0;
 
-// Calulcate pallet times
-function calculate(event) {
+// Event called on form submit
+function submitForm(event) {
     event.preventDefault();
-    
+
     // Pallet start time
     var startTime = document.getElementById('start-time').valueAsDate;
     // Pallet finish time
     var finishTime = document.getElementById('finish-time').valueAsDate;
+    
+    calculate(startTime, finishTime);
 
+    return false;
+}
+
+// Calulcate pallet times
+function calculate(startTime, finishTime) {
     // Check that start time comes before finish time
     if (startTime > finishTime) {
         return alert('Start time must be earlier than finish time.')
     }
+
+    // Check that start time comes before finish time
+    if (startTime.getTime() === finishTime.getTime()) {
+        return alert('Start time must different than finish time.')
+    }
+
     // Array of minutes not working pallet ex. [15, 60, 15]
     var interruptionsArray = interruptions.map(function (interuption) {
         return interuption.min;
@@ -40,7 +53,6 @@ function calculate(event) {
     var hourMinFloat = hours + (minutes / 60);
 
     alert(`You finished your pallet in ${hourMinFloat.toFixed(1)} hour(s).`);
-    return false;
 }
 
 function addInterruption(event) {
@@ -103,22 +115,16 @@ function deleteInterruption(event, id) {
 
 // Update datetime value to today
 function updateDateValue() {
-    // Today's date in YYYY-MM-DDT00:00
-    var todaysDate = new Date().toISOString().slice(0, 10) + 'T00:00'
+    // Today's date in YYYY-MM-DD
+    var todaysDate = new Date()
+    var formattedDate = formatDate(todaysDate);
+
     // Pallet start time
     var startTime = document.getElementById('start-time');
     // Pallet finish time
     var finishTime = document.getElementById('finish-time');
 
     // Set datetime inputs to today's date
-    startTime.value = todaysDate;
-    finishTime.value = todaysDate;
-}
-
-// Copied from https://stackoverflow.com/a/10893658
-function timeStringToFloat(time) {
-    var hoursMinutes = time.split(/[.:]/);
-    var hours = parseInt(hoursMinutes[0], 10);
-    var minutes = hoursMinutes[1] ? parseInt(hoursMinutes[1], 10) : 0;
-    return hours + minutes / 60;
+    startTime.value = formattedDate + 'T00:00';
+    finishTime.value = formattedDate + 'T01:00';
 }

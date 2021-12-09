@@ -9,7 +9,7 @@
 </head>
 <body onload="updateDateValue()">
     <h1>Pallet Time Calculator</h1>
-    <form onsubmit="return calculate(event)">
+    <form onsubmit="return submitForm(event)">
         <label for="start-time">Pallet start time: </label>
         <input type="datetime-local" id="start-time" name="start-time" required>
         <label for="finish-time">Pallet finish time: </label>
@@ -19,6 +19,7 @@
         <ul class="hidden" id="interruptions-list"></ul>
         <button type="submit">Calculate</button>
     </form>
+    <script src="js/utils.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
