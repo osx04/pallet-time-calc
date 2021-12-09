@@ -7,18 +7,16 @@
     <title>Pallet Time Calculator</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
-<body>
+<body onload="updateDateValue()">
     <h1>Pallet Time Calculator</h1>
     <form onsubmit="return calculate(event)">
         <label for="start-time">Pallet start time: </label>
-        <input id="start-time" type="time" name="start-time" required>
+        <input type="datetime-local" id="start-time" name="start-time" required>
         <label for="finish-time">Pallet finish time: </label>
-        <input id="finish-time" type="time" name="finish-time" required>
+        <input type="datetime-local" id="finish-time" name="finish-time" required>
         <h2 class="breaks-header">Interruptions <button onclick="return addInterruption(event)">Add interruption</button></h2>
         <h3>Time spent not working freight (breaks, side tasks, etc.)</p>
-        <ol class="hidden" id="breaks-list">
-            <li></li>
-        </ol>
+        <ul class="hidden" id="interruptions-list"></ul>
         <button type="submit">Calculate</button>
     </form>
     <script src="js/main.js"></script>

@@ -48,6 +48,10 @@ function addInterruption(event) {
 
     // Prompt for interruption minutes
     var interruptionMinutes = prompt('How long were you away from your pallet? Please enter a number in minutes above zero.', 0);
+    // Stop function on cancel or null
+    if (interruptionMinutes === null) {
+        return false;
+    }
     var interruptionMinutesNum = parseInt(interruptionMinutes);
 
     // Validate number given by user
@@ -71,7 +75,7 @@ function addInterruption(event) {
 
 // Update interruptions table
 function updateInterruptionsTable() {
-    var interruptionList = document.getElementById('breaks-list');
+    var interruptionList = document.getElementById('interruptions-list');
 
     if (interruptions.length === 0) {
         interruptionList.setAttribute('class', 'hidden');
@@ -97,10 +101,24 @@ function deleteInterruption(event, id) {
     return false;
 }
 
+// Update datetime value to today
+function updateDateValue() {
+    // Today's date in YYYY-MM-DDT00:00
+    var todaysDate = new Date().toISOString().slice(0, 10) + 'T00:00'
+    // Pallet start time
+    var startTime = document.getElementById('start-time');
+    // Pallet finish time
+    var finishTime = document.getElementById('finish-time');
+
+    // Set datetime inputs to today's date
+    startTime.value = todaysDate;
+    finishTime.value = todaysDate;
+}
+
 // Copied from https://stackoverflow.com/a/10893658
 function timeStringToFloat(time) {
     var hoursMinutes = time.split(/[.:]/);
     var hours = parseInt(hoursMinutes[0], 10);
     var minutes = hoursMinutes[1] ? parseInt(hoursMinutes[1], 10) : 0;
     return hours + minutes / 60;
-  }
+}
