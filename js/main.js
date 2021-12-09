@@ -12,6 +12,10 @@ function calculate(event) {
     // Pallet finish time
     var finishTime = document.getElementById('finish-time').valueAsDate;
 
+    // Check that start time comes before finish time
+    if (startTime > finishTime) {
+        return alert('Start time must be earlier than finish time.')
+    }
     // Array of break minutes ex. [15, 60, 15]
     var breaksArray = breaks.map(function (breakElement) {
         return breakElement.min;
