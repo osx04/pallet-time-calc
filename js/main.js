@@ -52,7 +52,7 @@ function calculate(startTime, finishTime) {
     // Convert hours and minutes into float like on SAP
     var hourMinFloat = hours + (minutes / 60);
 
-    alert(`You finished your pallet in ${hourMinFloat.toFixed(1)} hour${hourMinFloat.toFixed(1) > 1 ? 's' : ''}.`);
+    alert(`You finished your pallet in ${hourMinFloat.toFixed(1)} hour(s).`);
 }
 
 function addInterruption(event) {
