@@ -125,6 +125,6 @@ function updateDateValue() {
     var finishTime = document.getElementById('finish-time');
 
     // Set datetime inputs to today's date
-    startTime.value = formattedDate + 'T00:00';
-    finishTime.value = formattedDate + 'T01:00';
+    startTime.value = formattedDate + 'T15:00';
+    finishTime.value = formattedDate + 'T16:30';
 }
