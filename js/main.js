@@ -8,9 +8,9 @@ function submitForm(event) {
     event.preventDefault();
 
     // Pallet start time
-    var startTime = document.getElementById('start-time').valueAsDate;
+    var startTime = new Date(document.getElementById('start-time').value);
     // Pallet finish time
-    var finishTime = document.getElementById('finish-time').valueAsDate;
+    var finishTime = new Date(document.getElementById('finish-time').value);
     
     calculate(startTime, finishTime);
 
