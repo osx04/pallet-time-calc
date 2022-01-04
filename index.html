@@ -10,30 +10,23 @@
 </head>
 
 <body onload="updateDateValue()">
-    <div class="content">
-        <!-- <div class="row">
-            <div class="column sidebar">
-                <h1>Pallet Time Calculator</h1>
-                <p>Calculate pallet times easily, without the mental math.</p>
-                <ul class="nav">
-                    <li><a href="https://osx04.xyz/">Go back to osx04.xyz</a></li>
-                </ul>
-            </div>
-            <div class="column content"> -->
-                <form onsubmit="return submitForm(event)">
-                    <label for="start-time">Pallet start time: </label>
-                    <input type="datetime-local" id="start-time" name="start-time" required>
-                    <label for="finish-time">Pallet finish time: </label>
-                    <input type="datetime-local" id="finish-time" name="finish-time" required>
-                    <h2 class="breaks-header">Interruptions <button onclick="return addInterruption(event)">Add
-                            interruption</button></h2>
-                    <h3>Time spent not working freight (breaks, side tasks, etc.)</p>
-                        <ul class="hidden" id="interruptions-list"></ul>
-                        <button type="submit">Calculate</button>
-                </form>
-            <!-- </div>
-        </div> -->
-    </div>
+        <h1>
+            <span class="title">Pallet Time Calculator</span>
+            <img class="logo" src="images/logo.jpg">
+        </h1>
+        <h2>Calculate pallet times <span class="italics">sans</span> mental math.</h2>
+        <form onsubmit="return submitForm(event)">
+            <label for="start-time">Pallet start time: </label>
+            <input type="datetime-local" id="start-time" name="start-time" required>
+            <label for="finish-time">Pallet finish time: </label>
+            <input type="datetime-local" id="finish-time" name="finish-time" required>
+            <h2 class="breaks-header">Interruptions <button class="button" onclick="return addInterruption(event)">Add
+                    interruption</button></h2>
+            <h3>Time spent not working freight (breaks, side tasks, etc.)</p>
+                <ul class="hidden" id="interruptions-list"></ul>
+                <button class="button" type="submit">Calculate</button>
+        </form>
+
     <script src="js/utils.js"></script>
     <script src="js/main.js"></script>
 </body>

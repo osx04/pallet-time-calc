@@ -1,61 +1,42 @@
-/* .break-header {
-    vertical-align: middle;
+@font-face {
+    font-family: "Rubik";
+    src: url("/fonts/Rubik/static/Rubik-Regular.ttf");
 }
 
 .hidden {
     display: none;
 }
 
-.column {
-    float: left;
-    padding: 10px;
+.italics {
+    font-style: italic;
+    color: #dc2d1d; /* sampled from peco pallet */
 }
 
-.column .sidebar {
-    width: 25%;
-}
-
-.column .content {
-    width: 75%;
-}
-
-@media screen and (max-width: 600px) {
-    .column .sidebar, .column .content {
-        width: 100%;
-    }
-}
-
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-.nav {
-    list-style: none;
-    padding-left: 0;
-} */
-
-@font-face {
-    font-family: "Rubik-medium";
-    src: url("/fonts/Rubik/static/Rubik-Medium.ttf");
-}
-
-
-@font-face {
-    font-family: "Rubik-reg";
-    src: url("/fonts/Rubik/static/Rubik-Regular.ttf");
-}
-
-h2 {
-    font-family: 'Rubik-medium';
-}
-
-h3 {
-    font-family: 'Rubik-reg';
-}
-.content {
-    font-family: 'Rubik-reg';
+body {
+    font-family: 'Rubik';
+    font-weight: 400;
     margin-left: 12.5vw;
     margin-right: 12.5vw;
+}
+
+.logo {
+    vertical-align: middle;
+    padding-left: 10px;
+}
+
+.button {
+    background-color: #143584; /* sampled from chep pallet */
+    border: none;
+    color: #e6e0d0; /* sampled from chep pallet unpainted, then lightened */
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+/* responsive layout */
+@media screen and (max-width: 480px) {
+    body {
+        margin: auto;
+    }
 }
