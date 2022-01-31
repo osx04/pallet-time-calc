@@ -1,6 +1,7 @@
 // Format date as YYYY-MM-DD
 function formatDate(date) {
-    return `${date.getFullYear()}-${date.getMonth().toString().padStart(2, '0')}-${date.getDate().toString().padStart(2, '0')}`;
+    var month = date.getMonth() + 1;
+    return `${date.getFullYear()}-${month.toString().padStart(2, '0')}-${date.getDate().toString().padStart(2, '0')}`;
 }
 
 // Copied from https://stackoverflow.com/a/10893658
