@@ -9,21 +9,24 @@
 </head>
 <body onload="updateDateValue()">
     <h1>
-        <span>Pallet Time Calculator</span>
+        <span>Pallet Time Finish Calculator</span>
         <img class="logo" src="images/logo.jpg">
     </h1>
     <form onsubmit="return submitForm(event)">
-        <label for="start-time">Pallet start time: </label>
+        <label for="finish-time">Pallet start time: </label>
         <input type="datetime-local" id="start-time" name="start-time" required>
-        <label for="finish-time">Pallet finish time: </label>
-        <input type="datetime-local" id="finish-time" name="finish-time" required>
+        <label for="pallet-time">Pallet time: </label>
+        <input type="number" id="pallet-time" name="pallet-time" required step="0.1" value="1.0"> hour(s)
+        <label for="associates-working">Associates working: </label>
+        <input type="number" id="associates-working" name="associates-working" required step="1" value="1"> associate(s)
         <h2 class="breaks-header">Interruptions <button onclick="return addInterruption(event)">Add interruption</button></h2>
         <h3>Time spent not working freight (breaks, side tasks, etc.)</p>
         <ul class="hidden" id="interruptions-list"></ul>
         <button type="submit">Calculate</button>
     </form>
+    <script src="js/moment.min.js"></script>
     <script src="js/utils.js"></script>
     <script src="js/interruptions.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/finish.js"></script>
 </body>
 </html>
